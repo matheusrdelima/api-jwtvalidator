@@ -1,0 +1,30 @@
+package com.jwtvalidator.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.jwtvalidator.model.JwtValidationReponse;
+import com.jwtvalidator.model.JwtValidationRequest;
+import com.jwtvalidator.service.JwtValidatorService;
+
+@RestController
+@RequestMapping("/api/v1")
+public class JwtValidatorController {
+
+    private final JwtValidatorService jwtValidatorService;
+
+    @Autowired
+    public JwtValidatorController(JwtValidatorService jwtValidatorService) {
+        this.jwtValidatorService = jwtValidatorService;
+    }
+
+    @PostMapping("/validate")
+    public ResponseEntity<JwtValidationReponse> validate(@RequestBody JwtValidationRequest request) {
+        Boolean isValid = jwtValidatorService.validate(request.getJwt());
+        return ResponseEntity.ok(new JwtValidationReponse(isValid));
+    }
+}

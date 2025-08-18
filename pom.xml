@@ -11,8 +11,8 @@
 	<groupId>com.jwtvalidator</groupId>
 	<artifactId>jwt-validator</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>jwt-validator</name>
-	<description>API JWT Validator</description>
+	<name>JWT Validator</name>
+	<description>API para validacao de tokens JWT</description>
 	<url/>
 	<licenses>
 		<license/>
