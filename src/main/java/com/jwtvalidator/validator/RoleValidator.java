@@ -2,13 +2,15 @@ package com.jwtvalidator.validator;
 
 import org.springframework.stereotype.Component;
 
+import com.jwtvalidator.model.Claims;
+
 @Component
 public class RoleValidator implements Validator {
 
     public static final String VALIDATOR_NAME = "RoleValidator";
 
     @Override
-    public Boolean validate() {
+    public Boolean validate(Claims claims) {
         return true;
     }
 

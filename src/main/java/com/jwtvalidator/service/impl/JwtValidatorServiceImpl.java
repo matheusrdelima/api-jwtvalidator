@@ -1,6 +1,7 @@
 package com.jwtvalidator.service.impl;
 
 import java.util.List;
+import java.util.Objects;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -24,10 +25,13 @@ public class JwtValidatorServiceImpl implements JwtValidatorService {
     public Boolean validate(String jwt) {
         Claims claims = JWTDecode.decode(jwt);
 
-        System.out.println("Claims: " + claims);
+        if (Objects.isNull(claims)) {
+            System.out.println("Falha ao decodificar token");
+            return false;
+        }
 
         for (Validator validator : validators) {
-            Boolean isValid = validator.validate();
+            Boolean isValid = validator.validate(claims);
 
             if (!isValid) {
                 System.out.println("Validação falhou, validador: " + validator.getValidatorName());
