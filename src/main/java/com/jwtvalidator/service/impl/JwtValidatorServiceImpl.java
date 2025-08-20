@@ -7,23 +7,25 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.jwtvalidator.model.Claims;
+import com.jwtvalidator.security.jwt.JwtDecoder;
 import com.jwtvalidator.service.JwtValidatorService;
-import com.jwtvalidator.util.JWTDecode;
 import com.jwtvalidator.validator.Validator;
 
 @Service
 public class JwtValidatorServiceImpl implements JwtValidatorService {
 
+    private final JwtDecoder jwtDecoder;
     private final List<Validator> validators;
 
     @Autowired
-    public JwtValidatorServiceImpl(List<Validator> validators) {
+    public JwtValidatorServiceImpl(JwtDecoder jwtDecoder, List<Validator> validators) {
+        this.jwtDecoder = jwtDecoder;
         this.validators = validators;
     }
 
     @Override
     public Boolean validate(String jwt) {
-        Claims claims = JWTDecode.decode(jwt);
+        Claims claims = jwtDecoder.decode(jwt);
 
         if (Objects.isNull(claims)) {
             System.out.println("Falha ao decodificar token");

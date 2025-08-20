@@ -1,7 +1,6 @@
 package com.jwtvalidator.util;
 
 public class MathUtils {
-
     public static boolean isPrime(long number) {
         if (number <= 1)
             return false;
