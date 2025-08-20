@@ -5,7 +5,7 @@ import java.util.Objects;
 import org.springframework.stereotype.Component;
 
 import com.jwtvalidator.model.Claims;
-import com.jwtvalidator.util.StringHasNumber;
+import com.jwtvalidator.util.StringUtils;
 
 @Component
 public class NameValidator implements Validator {
@@ -28,7 +28,7 @@ public class NameValidator implements Validator {
             return false;
         }
 
-        if (StringHasNumber.check(name)) {
+        if (StringUtils.hasNumber(name)) {
             System.out.println("Name contém números: " + name);
             return false;
         }
