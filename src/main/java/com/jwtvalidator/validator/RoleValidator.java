@@ -5,6 +5,7 @@ import java.util.Set;
 
 import org.springframework.stereotype.Component;
 
+import com.jwtvalidator.core.validator.Validator;
 import com.jwtvalidator.exception.InvalidRoleException;
 import com.jwtvalidator.model.Claims;
 

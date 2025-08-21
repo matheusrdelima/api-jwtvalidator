@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.jwtvalidator.core.service.JwtValidatorService;
 import com.jwtvalidator.model.JwtValidationRequest;
-import com.jwtvalidator.service.JwtValidatorService;
 
 import jakarta.validation.Valid;
 

@@ -1,4 +1,4 @@
-package com.jwtvalidator.validator;
+package com.jwtvalidator.core.validator;
 
 import com.jwtvalidator.model.Claims;
 

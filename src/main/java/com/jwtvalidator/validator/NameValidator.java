@@ -4,6 +4,7 @@ import java.util.Objects;
 
 import org.springframework.stereotype.Component;
 
+import com.jwtvalidator.core.validator.Validator;
 import com.jwtvalidator.exception.InvalidNameException;
 import com.jwtvalidator.model.Claims;
 import com.jwtvalidator.util.StringUtils;

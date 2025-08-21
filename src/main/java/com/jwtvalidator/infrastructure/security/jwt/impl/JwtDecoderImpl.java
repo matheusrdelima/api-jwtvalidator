@@ -1,12 +1,12 @@
-package com.jwtvalidator.security.jwt.impl;
+package com.jwtvalidator.infrastructure.security.jwt.impl;
 
 import org.springframework.stereotype.Component;
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.exceptions.JWTDecodeException;
 import com.auth0.jwt.interfaces.DecodedJWT;
+import com.jwtvalidator.core.security.jwt.JwtDecoder;
 import com.jwtvalidator.model.Claims;
-import com.jwtvalidator.security.jwt.JwtDecoder;
 
 @Component
 public class JwtDecoderImpl implements JwtDecoder {

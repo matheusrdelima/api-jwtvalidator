@@ -4,6 +4,7 @@ import java.util.Objects;
 
 import org.springframework.stereotype.Component;
 
+import com.jwtvalidator.core.validator.Validator;
 import com.jwtvalidator.exception.InvalidSeedException;
 import com.jwtvalidator.exception.SeedNotPrimeException;
 import com.jwtvalidator.model.Claims;
