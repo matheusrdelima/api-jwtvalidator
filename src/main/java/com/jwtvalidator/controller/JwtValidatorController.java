@@ -11,6 +11,8 @@ import com.jwtvalidator.model.JwtValidationReponse;
 import com.jwtvalidator.model.JwtValidationRequest;
 import com.jwtvalidator.service.JwtValidatorService;
 
+import jakarta.validation.Valid;
+
 @RestController
 @RequestMapping("/api/v1")
 public class JwtValidatorController {
@@ -23,7 +25,7 @@ public class JwtValidatorController {
     }
 
     @PostMapping("/validate")
-    public ResponseEntity<JwtValidationReponse> validate(@RequestBody JwtValidationRequest request) {
+    public ResponseEntity<JwtValidationReponse> validate(@Valid @RequestBody JwtValidationRequest request) {
         Boolean isValid = jwtValidatorService.validate(request.getJwt());
         return ResponseEntity.ok(new JwtValidationReponse(isValid));
     }
