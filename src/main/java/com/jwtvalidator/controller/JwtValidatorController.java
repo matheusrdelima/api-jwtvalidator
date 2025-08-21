@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.jwtvalidator.model.JwtValidationReponse;
 import com.jwtvalidator.model.JwtValidationRequest;
 import com.jwtvalidator.service.JwtValidatorService;
 
@@ -25,8 +24,8 @@ public class JwtValidatorController {
     }
 
     @PostMapping("/validate")
-    public ResponseEntity<JwtValidationReponse> validate(@Valid @RequestBody JwtValidationRequest request) {
-        Boolean isValid = jwtValidatorService.validate(request.getJwt());
-        return ResponseEntity.ok(new JwtValidationReponse(isValid));
+    public ResponseEntity<String> validate(@Valid @RequestBody JwtValidationRequest request) {
+        jwtValidatorService.validate(request.getJwt());
+        return ResponseEntity.ok("verdadeiro");
     }
 }

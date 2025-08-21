@@ -4,6 +4,8 @@ import java.util.Objects;
 
 import org.springframework.stereotype.Component;
 
+import com.jwtvalidator.exception.InvalidSeedException;
+import com.jwtvalidator.exception.SeedNotPrimeException;
 import com.jwtvalidator.model.Claims;
 import com.jwtvalidator.util.MathUtils;
 
@@ -15,8 +17,7 @@ public class SeedValidator implements Validator {
     @Override
     public Boolean validate(Claims claims) {
         if (Objects.isNull(claims) || Objects.isNull(claims.getSeed())) {
-            System.out.println("Claim ou Seed nulo");
-            return false;
+            throw new InvalidSeedException("Claim ou Seed nulo");
         }
 
         String seedString = claims.getSeed();
@@ -24,12 +25,15 @@ public class SeedValidator implements Validator {
         try {
             long seed = Long.parseLong(seedString);
 
-            System.out.println("Seed: " + claims.getSeed());
+            boolean isPrime = MathUtils.isPrime(seed);
 
-            return MathUtils.isPrime(seed);
+            if (!isPrime) {
+                throw new SeedNotPrimeException("Seed não é um número primo: " + seed);
+            }
+
+            return true;
         } catch (NumberFormatException e) {
-            System.out.println("Nao é um número válido: " + seedString);
-            return false;
+            throw new InvalidSeedException("Não é um número válido: " + seedString);
         }
     }
 

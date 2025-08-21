@@ -5,6 +5,7 @@ import java.util.Set;
 
 import org.springframework.stereotype.Component;
 
+import com.jwtvalidator.exception.InvalidRoleException;
 import com.jwtvalidator.model.Claims;
 
 @Component
@@ -16,13 +17,14 @@ public class RoleValidator implements Validator {
     @Override
     public Boolean validate(Claims claims) {
         if (Objects.isNull(claims) || Objects.isNull(claims.getRole())) {
-            System.out.println("Claim ou Role nulo");
-            return false;
+            throw new InvalidRoleException("Claim ou Role nulo");
         }
 
-        System.out.println("Role: " + claims.getRole());
+        if (!ROLES.contains(claims.getRole())) {
+            throw new InvalidRoleException("Role inválida: " + claims.getRole());
+        }
 
-        return ROLES.contains(claims.getRole());
+        return true;
     }
 
     @Override

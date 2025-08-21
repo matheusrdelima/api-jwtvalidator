@@ -6,6 +6,7 @@ import java.util.Objects;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.jwtvalidator.exception.MalformedJwtException;
 import com.jwtvalidator.model.Claims;
 import com.jwtvalidator.security.jwt.JwtDecoder;
 import com.jwtvalidator.service.JwtValidatorService;
@@ -28,17 +29,11 @@ public class JwtValidatorServiceImpl implements JwtValidatorService {
         Claims claims = jwtDecoder.decode(jwt);
 
         if (Objects.isNull(claims)) {
-            System.out.println("Falha ao decodificar token");
-            return false;
+            throw new MalformedJwtException("JWT não decodificável");
         }
 
         for (Validator validator : validators) {
-            Boolean isValid = validator.validate(claims);
-
-            if (!isValid) {
-                System.out.println("Validação falhou, validador: " + validator.getValidatorName());
-                return false;
-            }
+            validator.validate(claims);
         }
 
         return true;
