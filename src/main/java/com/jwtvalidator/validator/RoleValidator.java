@@ -16,7 +16,7 @@ public class RoleValidator implements Validator {
     private static final Set<String> ROLES = Set.of("Admin", "Member", "External");
 
     @Override
-    public Boolean validate(Claims claims) {
+    public void validate(Claims claims) {
         if (Objects.isNull(claims) || Objects.isNull(claims.getRole())) {
             throw new InvalidRoleException("Claim ou Role nulo");
         }
@@ -24,8 +24,6 @@ public class RoleValidator implements Validator {
         if (!ROLES.contains(claims.getRole())) {
             throw new InvalidRoleException("Role inválida: " + claims.getRole());
         }
-
-        return true;
     }
 
     @Override

@@ -16,7 +16,7 @@ public class SeedValidator implements Validator {
     public static final String VALIDATOR_NAME = "SeedValidator";
 
     @Override
-    public Boolean validate(Claims claims) {
+    public void validate(Claims claims) {
         if (Objects.isNull(claims) || Objects.isNull(claims.getSeed())) {
             throw new InvalidSeedException("Claim ou Seed nulo");
         }
@@ -31,8 +31,6 @@ public class SeedValidator implements Validator {
             if (!isPrime) {
                 throw new SeedNotPrimeException("Seed não é um número primo: " + seed);
             }
-
-            return true;
         } catch (NumberFormatException e) {
             throw new InvalidSeedException("Não é um número válido: " + seedString);
         }

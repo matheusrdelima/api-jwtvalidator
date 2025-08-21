@@ -1,7 +1,7 @@
 package com.jwtvalidator.core.security.jwt;
 
-import com.jwtvalidator.model.Claims;
+import java.util.Map;
 
 public interface JwtDecoder {
-    Claims decode(String token);
+    Map<String, String> decode(String token);
 }

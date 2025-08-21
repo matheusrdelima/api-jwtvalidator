@@ -16,7 +16,7 @@ public class NameValidator implements Validator {
     private static final int MAX_NAME_LENGTH = 256;
 
     @Override
-    public Boolean validate(Claims claims) {
+    public void validate(Claims claims) {
         if (Objects.isNull(claims) || Objects.isNull(claims.getName())) {
             throw new InvalidNameException("Claim ou Name nulo");
         }
@@ -32,8 +32,6 @@ public class NameValidator implements Validator {
         if (StringUtils.hasNumber(name)) {
             throw new InvalidNameException("Name contém números: " + name);
         }
-
-        return true;
     }
 
     @Override
