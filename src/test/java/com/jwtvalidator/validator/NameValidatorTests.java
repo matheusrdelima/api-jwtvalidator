@@ -62,4 +62,13 @@ public class NameValidatorTests {
     public void testGetValidatorName() {
         assertEquals("NameValidator", nameValidator.getValidatorName());
     }
+
+    @Test
+    public void testValidateWithNameAtMaxLength() {
+        Claims claims = new Claims();
+        String maxLengthName = "a".repeat(256);
+        claims.setName(maxLengthName);
+
+        assertDoesNotThrow(() -> nameValidator.validate(claims));
+    }    
 }
