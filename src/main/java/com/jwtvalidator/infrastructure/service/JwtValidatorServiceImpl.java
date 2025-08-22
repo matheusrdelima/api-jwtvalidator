@@ -1,4 +1,4 @@
-package com.jwtvalidator.infrastructure.service.impl;
+package com.jwtvalidator.infrastructure.service;
 
 import java.util.List;
 

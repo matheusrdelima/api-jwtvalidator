@@ -1,4 +1,4 @@
-package com.jwtvalidator.infrastructure.security.jwt.impl;
+package com.jwtvalidator.infrastructure.security.jwt;
 
 import java.util.HashMap;
 import java.util.Map;
