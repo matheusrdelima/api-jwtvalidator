@@ -12,7 +12,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 public class ClaimsTests {    
     
     @Test
-    public void claimsTests() {
+    public void testclaims() {
         String name = "name";
         String role = "Admin";
         String seed = "2";
@@ -36,7 +36,7 @@ public class ClaimsTests {
     }
     
     @Test
-    public void claimsWithParamsTests() {
+    public void testclaimsWithParams() {
         String name = "name";
         String role = "Admin";
         String seed = "2";

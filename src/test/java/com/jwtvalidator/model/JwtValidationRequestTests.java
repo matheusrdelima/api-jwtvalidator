@@ -10,7 +10,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 public class JwtValidationRequestTests {
 
     @Test
-    public void jwtValidationRequestTests() {
+    public void testsjwtValidationRequest() {
         String token = "token_jwt";
 
         JwtValidationRequest jwtValidationRequest = new JwtValidationRequest();

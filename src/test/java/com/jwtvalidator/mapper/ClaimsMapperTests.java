@@ -15,7 +15,7 @@ import com.jwtvalidator.model.Claims;
 public class ClaimsMapperTests {
 
     @Test
-    public void claimsMapperTests() {
+    public void testclaimsMapper() {
         String name = "name";
         String role = "Admin";
         String seed = "2";
@@ -35,7 +35,7 @@ public class ClaimsMapperTests {
     }
 
     @Test
-    public void claimsMapperMalformedJwtExceptionTests() {
+    public void testclaimsMapperMalformedJwtException() {
         ClaimsMapper claimsMapper = new ClaimsMapper();
 
         assertThrows(com.jwtvalidator.exception.MalformedJwtException.class, () -> {
