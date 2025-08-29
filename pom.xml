@@ -88,7 +88,8 @@
 				<version>1.20.2</version>
 				<configuration>
 					<excludedClasses>
-						<param>com.jwtvalidator.exception.*</param>
+						<param>com.jwtvalidator.domain.exception.*</param>
+						<param>com.jwtvalidator.presentation.exception.*</param>
 					</excludedClasses>
 				</configuration>				
 				<dependencies>
