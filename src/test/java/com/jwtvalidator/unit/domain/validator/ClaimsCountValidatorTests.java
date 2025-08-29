@@ -1,4 +1,4 @@
-package com.jwtvalidator.domain.validator;
+package com.jwtvalidator.unit.domain.validator;
 
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -7,6 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import com.jwtvalidator.domain.exception.ClaimsCountValidatorException;
 import com.jwtvalidator.domain.exception.InvalidClaimsException;
 import com.jwtvalidator.domain.model.Claims;
+import com.jwtvalidator.domain.validator.ClaimsCountValidator;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

@@ -1,4 +1,4 @@
-package com.jwtvalidator.application.service;
+package com.jwtvalidator.unit.application.service;
 
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
@@ -12,6 +12,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import com.jwtvalidator.application.service.JwtValidatorServiceImpl;
 import com.jwtvalidator.core.metrics.JwtMetrics;
 import com.jwtvalidator.core.token.Decoder;
 import com.jwtvalidator.core.validator.ClaimValidator;

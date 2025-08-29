@@ -1,4 +1,4 @@
-package com.jwtvalidator.shared.util;
+package com.jwtvalidator.unit.shared.util;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
@@ -7,6 +7,8 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.junit.jupiter.MockitoExtension;
+
+import com.jwtvalidator.shared.util.StringUtils;
 
 @ExtendWith(MockitoExtension.class)
 public class StringUtilsTests {

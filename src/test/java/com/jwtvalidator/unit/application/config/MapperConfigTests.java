@@ -1,4 +1,4 @@
-package com.jwtvalidator.application.config;
+package com.jwtvalidator.unit.application.config;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import com.jwtvalidator.application.config.MapperConfig;
 import com.jwtvalidator.domain.mapper.ClaimsMapper;
 
 @ExtendWith(MockitoExtension.class)

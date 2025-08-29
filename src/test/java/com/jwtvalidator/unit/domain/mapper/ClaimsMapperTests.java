@@ -1,4 +1,4 @@
-package com.jwtvalidator.domain.mapper;
+package com.jwtvalidator.unit.domain.mapper;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -9,6 +9,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import com.jwtvalidator.domain.mapper.ClaimsMapper;
 import com.jwtvalidator.domain.model.Claims;
 
 @ExtendWith(MockitoExtension.class)

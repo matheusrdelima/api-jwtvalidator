@@ -1,4 +1,4 @@
-package com.jwtvalidator.presentation.controller;
+package com.jwtvalidator.unit.presentation.controller;
 
 import static org.mockito.Mockito.doNothing;
 import static org.mockito.Mockito.verify;
@@ -9,6 +9,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.jwtvalidator.core.service.JwtValidatorService;
+import com.jwtvalidator.presentation.controller.JwtValidatorController;
 import com.jwtvalidator.presentation.dto.JwtValidationRequest;
 
 import org.junit.jupiter.api.BeforeEach;

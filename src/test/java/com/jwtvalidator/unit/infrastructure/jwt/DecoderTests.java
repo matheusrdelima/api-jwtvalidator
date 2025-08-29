@@ -1,4 +1,4 @@
-package com.jwtvalidator.infrastructure.jwt;
+package com.jwtvalidator.unit.infrastructure.jwt;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
