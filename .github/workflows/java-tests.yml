@@ -61,4 +61,4 @@ jobs:
         run: mvn test -Dtest=*
 
       - name: Run PIT Mutation Testing
-        run: mvn pitest:mutationCoverage -X -e
+        run: mvn pitest:mutationCoverage
