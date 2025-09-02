@@ -111,6 +111,9 @@
 					<targetClasses>
 						<param>com.jwtvalidator.**</param>
 					</targetClasses>
+					<targetTests>
+						<param>com.jwtvalidator.**</param>
+					</targetTests>
 					<excludedClasses>
 						<param>com.jwtvalidator.domain.exception.*</param>
 						<param>com.jwtvalidator.presentation.exception.*</param>
