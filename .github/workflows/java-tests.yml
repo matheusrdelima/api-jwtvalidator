@@ -57,11 +57,8 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-maven-
 
-      - name: Verify Java version
-        run: java -version
-
       - name: Run tests with Maven (JUnit 5)
         run: mvn test -Dtest=*
 
-      - name: Run PIT Mutation Testing (with verbose logs)
+      - name: Run PIT Mutation Testing
         run: mvn pitest:mutationCoverage -X -e
