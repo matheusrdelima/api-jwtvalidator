@@ -112,7 +112,7 @@
 						<param>com.jwtvalidator.**</param>
 					</targetClasses>
 					<targetTests>
-						<param>com.jwtvalidator.**</param>
+						<param>com.jwtvalidator.unit.**</param>
 					</targetTests>
 					<excludedClasses>
 						<param>com.jwtvalidator.domain.exception.*</param>
