@@ -6,7 +6,9 @@ A aplicação foi projetada com foco em **qualidade de código, métricas observ
 
 ## ⚙️ Tecnologias e Dependências  
 
-A API foi construída em **Java 17** com **Spring Boot 3.5.4**, utilizando as seguintes ferramentas:  
+A API foi construída em **Java 17** com **Spring Boot 3.5.4**, utilizando **Maven** como ferramenta de build, gerenciamento de dependências e execução de testes.  
+
+Principais dependências e ferramentas utilizadas:  
 
 - **Spring Boot Starter Web** → Criação da API REST.  
 - **Spring Boot Starter Validation** → Validação de dados de entrada.  
@@ -29,6 +31,23 @@ A aplicação já está configurada para subir com **Prometheus** e **Grafana** 
 docker compose up --build
 ```
 
+### 2. Testes Unitários
+Executa todos os testes unitários da aplicação.
+```bash
+mvn test
+```
+
+### 3. Testes Integração
+Executa testes que verificam os endpoints da API utilizando REST Assured.
+```bash
+mvn verify
+```
+
+### 4. Testes de Mutantes (PIT)
+Executa o plugin PIT para validação da efetividade dos testes unitários.
+```bash
+mvn pitest:mutationCoverage
+```
 
 ## 🌐 Serviços Disponíveis  
 
