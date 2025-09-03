@@ -1,0 +1,148 @@
+type: collection.insomnia.rest/5.0
+name: Scratch Pad
+meta:
+  id: wrk_scratchpad
+  created: 1755550587390
+  modified: 1755550587390
+  description: ""
+collection:
+  - name: Test Cases
+    meta:
+      id: fld_d7ae8aa949b44c38b3270e9656defc94
+      created: 1692374400000
+      modified: 1692374400000
+      sortKey: -1692374300000
+      description: Casos de teste fornecidos na especificação
+    children:
+      - url: http://localhost:8080/api/v1/validate
+        name: Caso 3 - Name com Números
+        meta:
+          id: req_7341493141e94cccbac61997e09e3391
+          created: 1692374400000
+          modified: 1756866187023
+          isPrivate: false
+          description: "Teste do caso 3: Name contém números"
+          sortKey: -1692373900000
+        method: POST
+        body:
+          mimeType: application/json
+          text: >-
+            {
+            	"jwt": "eyJhbGciOiJIUzI1NiJ9.eyJSb2xlIjoiRXh0ZXJuYWwiLCJTZWVkIjoiODgwMzciLCJOYW1lIjoiTTRyaWEgT2xpdmlhIn0.6YD73XWZYQSSMDf6H0i3-kylz1-TY_Yt6h1cV2Ku-Qs"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/api/v1/validate
+        name: Caso 1 - JWT Válido
+        meta:
+          id: req_8da25267ec0d402a838ad271040bba2b
+          created: 1692374400000
+          modified: 1756866129096
+          isPrivate: false
+          description: "Teste do caso 1: JWT válido"
+          sortKey: -1692374100000
+        method: POST
+        body:
+          mimeType: application/json
+          text: >-
+            {
+            	"jwt": "eyJhbGciOiJIUzI1NiJ9.eyJSb2xlIjoiQWRtaW4iLCJTZWVkIjoiNzg0MSIsIk5hbWUiOiJUb25pbmhvIEFyYXVqbyJ9.QY05sIjtrcJnP533kQNk8QXcaleJ1Q01jWY_ZzIZuAg"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/api/v1/validate
+        name: Caso 4 - Mais de 3 Claims
+        meta:
+          id: req_914822a17a6e46e2b5e4d4ef326dbc85
+          created: 1692374400000
+          modified: 1756866204446
+          isPrivate: false
+          description: "Teste do caso 4: JWT com mais de 3 claims"
+          sortKey: -1692373800000
+        method: POST
+        body:
+          mimeType: application/json
+          text: >-
+            {
+            	"jwt": "eyJhbGciOiJIUzI1NiJ9.eyJSb2xlIjoiTWVtYmVyIiwiT3JnIjoiQlIiLCJTZWVkIjoiMTQ2MjciLCJOYW1lIjoiVmFsZGlyIEFyYW5oYSJ9.cmrXV_Flm5mfdpfNUVopY_I2zeJUy4EZ4i3Fea98zvY"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/api/v1/validate
+        name: Caso 2 - JWT Inválido
+        meta:
+          id: req_f01e82cec6ca4a98a8d3b502f166e028
+          created: 1692374400000
+          modified: 1756866169851
+          isPrivate: false
+          description: "Teste do caso 2: JWT malformado"
+          sortKey: -1692374000000
+        method: POST
+        body:
+          mimeType: application/json
+          text: >-
+            {
+            	"jwt": "eyJhbGciOiJzI1NiJ9.dfsdfsfryJSr2xrIjoiQWRtaW4iLCJTZrkIjoiNzg0MSIsIk5hbrUiOiJUb25pbmhvIEFyYXVqbyJ9.QY05fsdfsIjtrcJnP533kQNk8QXcaleJ1Q01jWY_ZzIZuAg"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_99d30891da4bdcebc63947a8fc17f076de878684
+    created: 1755550592961
+    modified: 1755550592961
+environments:
+  name: Base Environment
+  meta:
+    id: env_99d30891da4bdcebc63947a8fc17f076de878684
+    created: 1755550592917
+    modified: 1755550592917
+    isPrivate: false
+  subEnvironments:
+    - name: Environment
+      meta:
+        id: env_79d77341f51c4212bbbb4f8c870d7425
+        created: 1756866239228
+        modified: 1756866281073
+        isPrivate: false
+        sortKey: 1756866239228
+      data:
+        base_url: http://localhost:8080
+      color: "#f08000"
