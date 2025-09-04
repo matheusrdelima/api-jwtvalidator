@@ -35,10 +35,7 @@
       "type": "row"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "cevj658esderke"
-      },
+      "datasource": "Prometheus",
       "fieldConfig": {
         "defaults": {
           "decimals": 0,
@@ -84,10 +81,7 @@
       "pluginVersion": "12.2.0-17027759091",
       "targets": [
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "cevj658esderke"
-          },
+          "datasource": "Prometheus",
           "editorMode": "code",
           "expr": "round(sum(increase(jwt_validation_success_total{instance=\"$instance\"}[$__range])))",
           "instant": true,
@@ -100,10 +94,7 @@
       "type": "stat"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "cevj658esderke"
-      },
+      "datasource": "Prometheus",
       "fieldConfig": {
         "defaults": {
           "decimals": 0,
@@ -149,10 +140,7 @@
       "pluginVersion": "12.2.0-17027759091",
       "targets": [
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "cevj658esderke"
-          },
+          "datasource": "Prometheus",
           "editorMode": "code",
           "expr": "round(sum(increase(jwt_validation_failure_total{instance=\"$instance\"}[$__range])))",
           "instant": true,
@@ -165,10 +153,7 @@
       "type": "stat"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "cevj658esderke"
-      },
+      "datasource": "Prometheus",
       "fieldConfig": {
         "defaults": {
           "decimals": 0,
@@ -214,10 +199,7 @@
       "pluginVersion": "12.2.0-17027759091",
       "targets": [
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "cevj658esderke"
-          },
+          "datasource": "Prometheus",
           "editorMode": "code",
           "expr": "increase(http_server_requests_seconds_count{status=\"400\", uri=\"/api/v1/validate\"}[$__range])",
           "instant": true,
@@ -230,10 +212,7 @@
       "type": "stat"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "cevj658esderke"
-      },
+      "datasource": "Prometheus",
       "fieldConfig": {
         "defaults": {
           "decimals": 0,
@@ -279,10 +258,7 @@
       "pluginVersion": "12.2.0-17027759091",
       "targets": [
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "cevj658esderke"
-          },
+          "datasource": "Prometheus",
           "editorMode": "code",
           "expr": "increase(http_server_requests_seconds_count{status=\"500\", uri=\"/api/v1/validate\"}[$__range])",
           "instant": true,
@@ -295,9 +271,7 @@
       "type": "stat"
     },
     {
-      "datasource": {
-        "uid": "cevj658esderke"
-      },
+      "datasource": "Prometheus",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -417,10 +391,7 @@
           "refId": "A"
         },
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "cevj658esderke"
-          },
+          "datasource": "Prometheus",
           "editorMode": "code",
           "expr": "round(sum(increase(jwt_validation_success_total{instance=\"$instance\"}[$__range])))",
           "hide": false,
@@ -434,10 +405,7 @@
       "type": "timeseries"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "cevj658esderke"
-      },
+      "datasource": "Prometheus",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -521,10 +489,7 @@
       "pluginVersion": "12.2.0-17027759091",
       "targets": [
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "cevj658esderke"
-          },
+          "datasource": "Prometheus",
           "editorMode": "code",
           "expr": "sum(rate(http_server_requests_seconds_sum{instance=\"$instance\", status!~\"5..\"}[1m]))/sum(rate(http_server_requests_seconds_count{instance=\"$instance\", status!~\"5..\"}[1m]))",
           "format": "time_series",
@@ -534,10 +499,7 @@
           "refId": "A"
         },
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "cevj658esderke"
-          },
+          "datasource": "Prometheus",
           "editorMode": "code",
           "expr": "max(http_server_requests_seconds_max{instance=\"$instance\", status!~\"5..\"})",
           "format": "time_series",
@@ -551,10 +513,7 @@
       "type": "timeseries"
     },
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "cevj658esderke"
-      },
+      "datasource": "Prometheus",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -635,10 +594,7 @@
       "pluginVersion": "12.2.0-17027759091",
       "targets": [
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "cevj658esderke"
-          },
+          "datasource": "Prometheus",
           "editorMode": "code",
           "expr": "sum(rate(http_server_requests_seconds_count{instance=\"$instance\"}[1m]))",
           "format": "time_series",
@@ -662,10 +618,7 @@
       "id": 12,
       "panels": [
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "cevj658esderke"
-          },
+          "datasource": "Prometheus",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -751,10 +704,7 @@
           "pluginVersion": "12.2.0-17027759091",
           "targets": [
             {
-              "datasource": {
-                "type": "prometheus",
-                "uid": "cevj658esderke"
-              },
+              "datasource": "Prometheus",
               "editorMode": "code",
               "expr": "system_cpu_usage{instance=\"$instance\"}",
               "format": "time_series",
@@ -764,10 +714,7 @@
               "refId": "A"
             },
             {
-              "datasource": {
-                "type": "prometheus",
-                "uid": "cevj658esderke"
-              },
+              "datasource": "Prometheus",
               "editorMode": "code",
               "expr": "process_cpu_usage{instance=\"$instance\"}",
               "format": "time_series",
@@ -795,10 +742,7 @@
       "id": 14,
       "panels": [
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "cevj658esderke"
-          },
+          "datasource": "Prometheus",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -879,10 +823,7 @@
           "pluginVersion": "12.2.0-17027759091",
           "targets": [
             {
-              "datasource": {
-                "type": "prometheus",
-                "uid": "cevj658esderke"
-              },
+              "datasource": "Prometheus",
               "editorMode": "code",
               "expr": "irate(jvm_gc_memory_allocated_bytes_total{instance=\"$instance\"}[5m])",
               "format": "time_series",
@@ -892,10 +833,7 @@
               "refId": "A"
             },
             {
-              "datasource": {
-                "type": "prometheus",
-                "uid": "cevj658esderke"
-              },
+              "datasource": "Prometheus",
               "editorMode": "code",
               "expr": "irate(jvm_gc_memory_promoted_bytes_total{instance=\"$instance\"}[5m])",
               "format": "time_series",
