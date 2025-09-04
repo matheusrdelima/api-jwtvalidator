@@ -1,6 +1,7 @@
 # JWT Validator API  
 
 API desenvolvida para **validação de tokens JWT**, permitindo aplicar diferentes regras de negócio sobre as *claims*.  
+
 A aplicação foi projetada com foco em **qualidade de código, métricas observáveis e arquitetura flexível**, garantindo fácil evolução e manutenção.  
 
 
@@ -55,16 +56,34 @@ Após subir os containers com Docker Compose, os seguintes serviços estarão di
 
 - **API** → [http://localhost:8080](http://localhost:8080)  
 - **Endpoint de Métricas (Prometheus)** → [http://localhost:8080/actuator/prometheus](http://localhost:8080/actuator/prometheus)  
-- **Grafana** → [http://localhost:3000](http://localhost:3000)  
+- **Grafana** → [http://localhost:3000](http://localhost:3000)
+
+### Acesso ao Grafana  
+- Usuário: **admin**  
+- Senha: **admin**  
+
+### Dashboard  
+O **dashboard "API JWT Validator"** será importado automaticamente. 
+
+Para utilizá-lo:  
+1. Acesse o Grafana.
+2. Selecione o Dashboard: **API JWT Validator**
+3. Selecione a instância **`api-jwt-validator:8080`**.  
+
+O painel será exibido conforme a imagem abaixo:
+
+![Dashboard-api-jwt](./docs/dashboard.png)
 
 
 ## 📂 Collection de Testes  
 
 Uma collection do **Insomnia** está disponível para facilitar os testes da API.  
+
 Você pode importá-la clicando no botão abaixo:  
 
 [![Run in Insomnia}](https://insomnia.rest/images/run.svg)](https://insomnia.rest/run/?label=API%20JWT%20Validator&uri=https%3A%2F%2Fgithub.com%2Fmatheusrdelima%2Fapi-jwtvalidator%2Fblob%2Fmain%2Fcollection.yaml) 
 
+Caso opte pela importação manual, utilize o arquivo [**collection.yaml**](https://github.com/matheusrdelima/api-jwtvalidator/blob/main/collection.yaml), disponível na raiz do projeto.
 
 ## 🧪 Massa de teste
 
