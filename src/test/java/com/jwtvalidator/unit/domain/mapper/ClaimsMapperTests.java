@@ -2,13 +2,18 @@ package com.jwtvalidator.unit.domain.mapper;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
 
+import java.lang.reflect.Field;
 import java.util.Map;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import com.jwtvalidator.core.logs.LoggerManager;
+import com.jwtvalidator.domain.exception.MalformedJwtException;
 import com.jwtvalidator.domain.mapper.ClaimsMapper;
 import com.jwtvalidator.domain.model.Claims;
 
@@ -35,12 +40,19 @@ public class ClaimsMapperTests {
         assertEquals(claims.getAllClaims(), claimsMap);
     }
 
+    @SuppressWarnings("unchecked")
     @Test
-    public void testclaimsMapperMalformedJwtException() {
+    public void testClaimsMapperMalformedJwtExceptionWithLogger() throws Exception {
+        LoggerManager<ClaimsMapper> mockLogger = mock(LoggerManager.class);
+
         ClaimsMapper claimsMapper = new ClaimsMapper();
 
-        assertThrows(com.jwtvalidator.domain.exception.MalformedJwtException.class, () -> {
-            claimsMapper.toClaims(null);
-        });
+        Field loggerField = ClaimsMapper.class.getDeclaredField("logger");
+        loggerField.setAccessible(true);
+        loggerField.set(claimsMapper, mockLogger);
+
+        assertThrows(MalformedJwtException.class, () -> claimsMapper.toClaims(null));
+
+        verify(mockLogger).error("Claims map is null");
     }
 }
